@@ -27,7 +27,7 @@ const ScannerPage = () => {
 
     // Configure base URL for axios if not done globally
     // Using default proxy or local port 5000
-    const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+    const API_BASE = import.meta.env.VITE_API_URL || '';
 
     useEffect(() => {
         if (!user) {
@@ -86,7 +86,7 @@ const ScannerPage = () => {
 
             // Call the Node server bridge
             const { data } = await axios.post(`${API_BASE}/api/ai/analyze`, { imageBase64: imageSrc }, config);
-            
+
             // Artificial delay to show the "professional" progress ring
             setTimeout(() => {
                 setResult(data);
@@ -166,7 +166,7 @@ const ScannerPage = () => {
                 <div className="grid md:grid-cols-2 gap-8 items-start">
                     {/* Left: Upload Section */}
                     <div className="bg-white p-8 rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100">
-                        <div 
+                        <div
                             className={`border-3 border-dashed rounded-2xl p-6 transition-all duration-300 flex flex-col items-center justify-center min-h-[350px] cursor-pointer 
                             ${!imageSrc ? 'border-slate-200 bg-slate-50 hover:bg-slate-100 hover:border-indigo-300' : 'border-indigo-100 bg-white'}`}
                             onClick={() => !isScanning && document.getElementById('fileInput').click()}
@@ -227,7 +227,7 @@ const ScannerPage = () => {
                                     </div>
                                     <span className="text-xs bg-white/20 px-2 py-1 rounded-full backdrop-blur-sm">Verified Local Engine</span>
                                 </div>
-                                
+
                                 <div className="p-8">
                                     <div className="flex justify-between items-start mb-6">
                                         <div>
@@ -251,7 +251,7 @@ const ScannerPage = () => {
 
                                     <div className="space-y-3">
                                         <p className="text-xs font-bold text-slate-400 uppercase tracking-widest px-1">Probability Distribution</p>
-                                        {(result.all_predictions || []).sort((a,b) => b.confidence - a.confidence).slice(0, 3).map((p, idx) => (
+                                        {(result.all_predictions || []).sort((a, b) => b.confidence - a.confidence).slice(0, 3).map((p, idx) => (
                                             <div key={idx} className="space-y-1">
                                                 <div className="flex justify-between text-xs font-medium text-slate-600">
                                                     <span>{p.name}</span>
@@ -284,8 +284,8 @@ const ScannerPage = () => {
 
                 <div className="mt-12 p-6 bg-slate-100 rounded-2xl border border-slate-200">
                     <p className="text-xs text-slate-500 leading-relaxed text-center">
-                        <strong>Disclaimer:</strong> This tool is powered by an AI neural network for educational purposes only. 
-                        It is not a substitute for professional medical advice, diagnosis, or treatment. 
+                        <strong>Disclaimer:</strong> This tool is powered by an AI neural network for educational purposes only.
+                        It is not a substitute for professional medical advice, diagnosis, or treatment.
                         Always seek the advice of your physician or other qualified health provider with any questions regarding a medical condition.
                     </p>
                 </div>

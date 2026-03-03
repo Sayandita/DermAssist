@@ -19,6 +19,8 @@ export const AuthProvider = ({ children }) => {
         }
     }, []);
 
+    const API_BASE = import.meta.env.VITE_API_URL || '';
+
     // Login function
     const login = async (email, password) => {
         try {
@@ -27,7 +29,7 @@ export const AuthProvider = ({ children }) => {
 
             // Make API call. Vite proxy handles /api
             const config = { headers: { 'Content-Type': 'application/json' } };
-            const { data } = await axios.post('/api/auth/login', { email, password }, config);
+            const { data } = await axios.post(`${API_BASE}/api/auth/login`, { email, password }, config);
 
             // Save to localStorage and state
             localStorage.setItem('userInfo', JSON.stringify(data));
@@ -48,7 +50,7 @@ export const AuthProvider = ({ children }) => {
             setError(null);
 
             const config = { headers: { 'Content-Type': 'application/json' } };
-            const { data } = await axios.post('/api/auth/signup', { name, email, password }, config);
+            const { data } = await axios.post(`${API_BASE}/api/auth/signup`, { name, email, password }, config);
 
             localStorage.setItem('userInfo', JSON.stringify(data));
             setUser(data);

@@ -31,17 +31,4 @@ services:
           name: dermassist-ai-server
           envVarKey: RENDER_EXTERNAL_URL
 
-  # 3. React Frontend
-  - type: web
-    name: dermassist-frontend
-    env: static
-    region: ohio
-    plan: free
-    buildCommand: npm install && npm run build
-    staticPublishPath: ./dist
-    envVars:
-      - key: VITE_API_URL
-        fromService:
-          type: web
-          name: dermassist-node-server
-          envVarKey: RENDER_EXTERNAL_URL
+

@@ -13,7 +13,7 @@ const HistoryPage = () => {
     const [error, setError] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');
 
-    const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+    const API_BASE = import.meta.env.VITE_API_URL || '';
 
     useEffect(() => {
         if (!user) {
@@ -152,7 +152,7 @@ const HistoryPage = () => {
                                                 </td>
                                                 <td className="px-6 py-4 text-right">
                                                     <span className={`font-bold ${scan.statusType === 'High Risk' ? 'text-red-600' :
-                                                            scan.statusType === 'Monitor' ? 'text-yellow-600' : 'text-green-600'
+                                                        scan.statusType === 'Monitor' ? 'text-yellow-600' : 'text-green-600'
                                                         }`}>
                                                         {scan.statusType}
                                                     </span>
