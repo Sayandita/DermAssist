@@ -1,0 +1,47 @@
+services:
+  # 1. AI Python Backend (Inference Server)
+  - type: web
+    name: dermassist-ai-server
+    env: docker
+    region: ohio
+    plan: free
+    dockerContext: ./ai-server
+    dockerfilePath: ./ai-server/Dockerfile
+    envVars:
+      - key: PORT
+        value: 8000
+
+  # 2. Node.js Express Backend
+  - type: web
+    name: dermassist-node-server
+    env: node
+    region: ohio
+    plan: free
+    rootDir: ./server
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: MONGO_URI
+        sync: false # Render requires you to paste your MongoDB Atlas URI here directly in the dashboard
+      - key: JWT_SECRET
+        generateValue: true
+      - key: AI_SERVER_URL
+        fromService:
+          type: web
+          name: dermassist-ai-server
+          envVarKey: RENDER_EXTERNAL_URL
+
+  # 3. React Frontend
+  - type: web
+    name: dermassist-frontend
+    env: static
+    region: ohio
+    plan: free
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: dermassist-node-server
+          envVarKey: RENDER_EXTERNAL_URL
