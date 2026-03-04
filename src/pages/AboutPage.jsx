@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Github, Linkedin, Mail, Send, CheckCircle, Activity } from 'lucide-react';
+import { ArrowLeft, Github, Linkedin, Mail, Send, CheckCircle, Activity, IterationCcw } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const AboutPage = () => {
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -8,27 +9,61 @@ const AboutPage = () => {
 
     const developers = [
         {
-            name: "John Doe",
+            name: "Sayandita Rao",
             role: "Lead Full Stack Developer",
             bio: "Passionate about AI-driven applications and building scalable Node.js architectures.",
-            github: "https://github.com",
-            linkedin: "https://linkedin.com",
-            email: "john@example.com"
+            github: "https://github",
+            linkedin: "https://linkedin",
+            email: "mail@example"
         },
         {
-            name: "Jane Smith",
+            name: "disha",
             role: "Machine Learning Engineer",
             bio: "Specializing in Convolutional Neural Networks and optimizing models for edge inference.",
             github: "https://github.com",
             linkedin: "https://linkedin.com",
-            email: "jane@example.com"
+            email: "mail@example.com"
         }
     ];
 
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitError, setSubmitError] = useState(null);
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Simulate an API call
-        setTimeout(() => setSubmitted(true), 500);
+
+        // Prevent multiple submissions
+        if (isSubmitting) return;
+
+        setIsSubmitting(true);
+        setSubmitError(null);
+
+        // Replace these with your actual EmailJS credentials
+        const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID';
+        const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID';
+        const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY';
+
+        // Prepare the template parameters to match your EmailJS template variables
+        const templateParams = {
+            from_name: formData.name,
+            from_email: formData.email,
+            message: formData.message,
+            to_name: 'DermAssist Team', // Optional, depending on your template
+        };
+
+        emailjs.send(serviceId, templateId, templateParams, publicKey)
+            .then((response) => {
+                console.log('SUCCESS!', response.status, response.text);
+                setSubmitted(true);
+                setFormData({ name: '', email: '', message: '' }); // Clear form
+            })
+            .catch((err) => {
+                console.error('FAILED...', err);
+                setSubmitError('Failed to send message. Please try again later.');
+            })
+            .finally(() => {
+                setIsSubmitting(false);
+            });
     };
 
     return (
@@ -96,7 +131,7 @@ const AboutPage = () => {
                                     <input
                                         type="text"
                                         required
-                                        placeholder="Alex Mercer"
+                                        placeholder="Full Name"
                                         value={formData.name}
                                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                         className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-slate-50 focus:bg-white transition"
@@ -107,7 +142,7 @@ const AboutPage = () => {
                                     <input
                                         type="email"
                                         required
-                                        placeholder="alex@example.com"
+                                        placeholder="email@example.com"
                                         value={formData.email}
                                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                         className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-slate-50 focus:bg-white transition"
@@ -125,11 +160,20 @@ const AboutPage = () => {
                                     className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-slate-50 focus:bg-white transition resize-y"
                                 ></textarea>
                             </div>
+                            {submitError && (
+                                <p className="text-red-500 text-sm font-medium">{submitError}</p>
+                            )}
                             <button
                                 type="submit"
-                                className="w-full bg-indigo-600 text-white font-bold py-4 rounded-xl hover:bg-indigo-700 transition shadow-lg shadow-indigo-200 flex items-center justify-center gap-2"
+                                disabled={isSubmitting}
+                                className={`w-full text-white font-bold py-4 rounded-xl transition shadow-lg flex items-center justify-center gap-2 
+                                ${isSubmitting ? 'bg-indigo-400 cursor-not-allowed shadow-none' : 'bg-indigo-600 hover:bg-indigo-700 shadow-indigo-200'}`}
                             >
-                                <Send size={20} /> Send Message
+                                {isSubmitting ? (
+                                    <><IterationCcw className="animate-spin" size={20} /> Sending...</>
+                                ) : (
+                                    <><Send size={20} /> Send Message</>
+                                )}
                             </button>
                         </form>
                     )}
