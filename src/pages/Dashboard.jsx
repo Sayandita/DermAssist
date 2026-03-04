@@ -110,8 +110,8 @@ const Dashboard = () => {
             {/* Navigation */}
             <nav className="bg-white shadow-sm border-b border-gray-200 p-4">
                 <div className="max-w-7xl mx-auto flex justify-between items-center">
-                    <Link to="/" className="flex items-center gap-2 text-indigo-700 font-bold text-xl">
-                        <Activity className="w-6 h-6" />
+                    <Link to="/" className="flex items-center gap-3 text-indigo-700 font-bold text-xl">
+                        <img src="/src/assets/logo.png" alt="DermAssist AI Logo" className="w-8 h-8 object-contain" />
                         DermAssist AI
                     </Link>
                     <div className="flex items-center gap-4">

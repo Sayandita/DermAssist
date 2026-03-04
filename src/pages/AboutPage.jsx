@@ -17,7 +17,7 @@ const AboutPage = () => {
             email: "mail@example"
         },
         {
-            name: "disha",
+            name: "Disha",
             role: "Machine Learning Engineer",
             bio: "Specializing in Convolutional Neural Networks and optimizing models for edge inference.",
             github: "https://github.com",
@@ -74,8 +74,8 @@ const AboutPage = () => {
                     <Link to="/" className="flex items-center gap-2 text-slate-600 hover:text-indigo-600 font-medium transition">
                         <ArrowLeft size={18} /> Back to Home
                     </Link>
-                    <div className="flex items-center gap-2">
-                        <Activity className="text-indigo-600 w-6 h-6" />
+                    <div className="flex items-center gap-3">
+                        <img src="/src/assets/logo.png" alt="DermAssist AI Logo" className="w-8 h-8 object-contain" />
                         <span className="font-bold text-xl tracking-tight text-slate-800">DermAssist<span className="text-indigo-600">AI</span></span>
                     </div>
                     <div className="w-24"></div>

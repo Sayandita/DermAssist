@@ -32,8 +32,8 @@ const LoginPage = () => {
     return (
         <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-md flex flex-col items-center">
-                <Link to="/" className="flex items-center gap-2 text-indigo-700 font-bold text-2xl mb-2 hover:opacity-80 transition-opacity">
-                    <Activity className="w-8 h-8" />
+                <Link to="/" className="flex items-center gap-3 text-indigo-700 font-bold text-2xl mb-2 hover:opacity-80 transition-opacity">
+                    <img src="/src/assets/logo.png" alt="DermAssist AI Logo" className="w-10 h-10 object-contain" />
                     DermAssist AI
                 </Link>
                 <h2 className="mt-4 text-center text-3xl font-extrabold text-gray-900">Sign in to your account</h2>
