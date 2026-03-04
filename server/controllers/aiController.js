@@ -20,7 +20,7 @@ const analyzeImage = async (req, res) => {
         // Extract base64 data
         const base64Data = imageBase64.split(';base64,').pop();
         const buffer = Buffer.from(base64Data, 'base64');
-        
+
         // Use native FormData (available in Node 22)
         const formData = new FormData();
         const blob = new Blob([buffer], { type: 'image/jpeg' });
@@ -30,6 +30,10 @@ const analyzeImage = async (req, res) => {
         const aiResponse = await fetch(`${AI_SERVER_URL}/predict`, {
             method: 'POST',
             body: formData,
+            headers: {
+                'Accept': 'application/json',
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'
+            }
         });
 
         if (!aiResponse.ok) {
