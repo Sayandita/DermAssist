@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Camera, History, Activity, AlertCircle, ArrowRight, User } from 'lucide-react';
 import axios from 'axios';
 import { AuthContext } from '../context/AuthContext';
+import logoImg from '../assets/logo.png';
 
 const Dashboard = () => {
     const { user, logout } = useContext(AuthContext);
@@ -111,7 +112,7 @@ const Dashboard = () => {
             <nav className="bg-white shadow-sm border-b border-gray-200 p-4">
                 <div className="max-w-7xl mx-auto flex justify-between items-center px-0 sm:px-2 md:px-4">
                     <Link to="/" className="flex items-center gap-2 sm:gap-3 text-indigo-700 font-bold text-lg sm:text-xl shrink-0">
-                        <img src="/src/assets/logo.png" alt="DermAssist AI Logo" className="w-6 h-6 sm:w-8 sm:h-8 object-contain" />
+                        <img src={logoImg} alt="DermAssist AI Logo" className="w-6 h-6 sm:w-8 sm:h-8 object-contain" />
                         <span className="hidden sm:inline">DermAssist AI</span>
                     </Link>
                     <div className="flex items-center gap-2 sm:gap-4 ml-4">

@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Stethoscope, ShieldCheck, Activity, BrainCircuit, Info } from 'lucide-react';
 import { AuthContext } from '../context/AuthContext';
 import DotGrid from './DotGrid';
+import logoImg from '../assets/logo.png';
 const LandingPage = () => {
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
@@ -18,7 +19,7 @@ const LandingPage = () => {
         <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex flex-col">
             <nav className="w-full p-4 sm:p-6 flex justify-between items-center bg-white shadow-sm">
                 <div className="flex items-center gap-2 sm:gap-3 text-indigo-700 font-bold text-xl sm:text-2xl">
-                    <img src="/src/assets/logo.png" alt="DermAssist AI Logo" className="w-8 h-8 sm:w-10 sm:h-10 object-contain" />
+                    <img src={logoImg} alt="DermAssist AI Logo" className="w-8 h-8 sm:w-10 sm:h-10 object-contain" />
                     <span className="hidden sm:inline">DermAssist AI</span>
                 </div>
                 <div className="space-x-4">

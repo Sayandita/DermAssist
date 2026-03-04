@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Mail, Lock, User, ArrowRight, Loader2, AlertTriangle, Activity } from 'lucide-react';
 import { AuthContext } from '../context/AuthContext';
+import logoImg from '../assets/logo.png';
 
 const SignupPage = () => {
     const [name, setName] = useState('');
@@ -34,7 +35,7 @@ const SignupPage = () => {
         <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-md flex flex-col items-center">
                 <Link to="/" className="flex items-center gap-3 text-indigo-700 font-bold text-2xl mb-2 hover:opacity-80 transition-opacity">
-                    <img src="/src/assets/logo.png" alt="DermAssist AI Logo" className="w-10 h-10 object-contain" />
+                    <img src={logoImg} alt="DermAssist AI Logo" className="w-10 h-10 object-contain" />
                     DermAssist AI
                 </Link>
                 <h2 className="mt-4 text-center text-3xl font-extrabold text-gray-900">Create an account</h2>

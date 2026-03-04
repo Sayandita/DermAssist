@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Github, Linkedin, Mail, Send, CheckCircle, Activity, IterationCcw } from 'lucide-react';
 import emailjs from '@emailjs/browser';
+import logoImg from '../assets/logo.png';
 
 const AboutPage = () => {
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -75,7 +76,7 @@ const AboutPage = () => {
                         <ArrowLeft size={18} /> <span className="hidden sm:inline">Back to Home</span>
                     </Link>
                     <div className="flex items-center gap-2 sm:gap-3">
-                        <img src="/src/assets/logo.png" alt="DermAssist AI Logo" className="w-6 h-6 sm:w-8 sm:h-8 object-contain" />
+                        <img src={logoImg} alt="DermAssist AI Logo" className="w-6 h-6 sm:w-8 sm:h-8 object-contain" />
                         <span className="font-bold text-lg sm:text-xl tracking-tight text-slate-800">DermAssist<span className="text-indigo-600">AI</span></span>
                     </div>
                     <div className="w-8 sm:w-24"></div>
