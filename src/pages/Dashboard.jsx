@@ -109,21 +109,21 @@ const Dashboard = () => {
         <div className="min-h-screen bg-gray-50 flex flex-col">
             {/* Navigation */}
             <nav className="bg-white shadow-sm border-b border-gray-200 p-4">
-                <div className="max-w-7xl mx-auto flex justify-between items-center">
-                    <Link to="/" className="flex items-center gap-3 text-indigo-700 font-bold text-xl">
-                        <img src="/src/assets/logo.png" alt="DermAssist AI Logo" className="w-8 h-8 object-contain" />
-                        DermAssist AI
+                <div className="max-w-7xl mx-auto flex justify-between items-center px-0 sm:px-2 md:px-4">
+                    <Link to="/" className="flex items-center gap-2 sm:gap-3 text-indigo-700 font-bold text-lg sm:text-xl shrink-0">
+                        <img src="/src/assets/logo.png" alt="DermAssist AI Logo" className="w-6 h-6 sm:w-8 sm:h-8 object-contain" />
+                        <span className="hidden sm:inline">DermAssist AI</span>
                     </Link>
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-2 sm:gap-4 ml-4">
                         <div className="flex items-center gap-2 text-gray-700">
                             <div className="bg-indigo-100 p-2 rounded-full shadow-inner">
-                                <User className="w-5 h-5 text-indigo-600" />
+                                <User className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-600" />
                             </div>
-                            <span className="font-bold hidden sm:block text-indigo-900">{user?.name}</span>
+                            <span className="font-bold hidden md:block text-indigo-900 truncate max-w-[120px]">{user?.name}</span>
                         </div>
                         <button
                             onClick={handleLogout}
-                            className="text-sm font-medium bg-red-50 text-red-600 px-4 py-2 rounded-lg hover:bg-red-100 transition whitespace-nowrap">
+                            className="text-xs sm:text-sm font-medium bg-red-50 text-red-600 px-3 sm:px-4 py-2 rounded-lg hover:bg-red-100 transition whitespace-nowrap">
                             Logout
                         </button>
                     </div>

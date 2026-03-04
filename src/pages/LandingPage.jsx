@@ -16,10 +16,10 @@ const LandingPage = () => {
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex flex-col">
-            <nav className="w-full p-6 flex justify-between items-center bg-white shadow-sm">
-                <div className="flex items-center gap-3 text-indigo-700 font-bold text-2xl">
-                    <img src="/src/assets/logo.png" alt="DermAssist AI Logo" className="w-10 h-10 object-contain" />
-                    DermAssist AI
+            <nav className="w-full p-4 sm:p-6 flex justify-between items-center bg-white shadow-sm">
+                <div className="flex items-center gap-2 sm:gap-3 text-indigo-700 font-bold text-xl sm:text-2xl">
+                    <img src="/src/assets/logo.png" alt="DermAssist AI Logo" className="w-8 h-8 sm:w-10 sm:h-10 object-contain" />
+                    <span className="hidden sm:inline">DermAssist AI</span>
                 </div>
                 <div className="space-x-4">
                     <Link to="/login" className="text-gray-600 hover:text-indigo-600 font-medium">Login</Link>
@@ -27,7 +27,7 @@ const LandingPage = () => {
                 </div>
             </nav>
 
-            <main className="flex-grow flex flex-col items-center justify-center text-center px-4 py-20 relative overflow-hidden">
+            <main className="flex-grow flex flex-col items-center justify-center text-center px-4 py-12 sm:py-20 relative overflow-hidden">
                 {/* Background Animation */}
                 <div className="absolute inset-0 z-0 opacity-40 pointer-events-auto">
                     <div style={{ width: '100%', height: '100%', position: 'relative' }}>
@@ -46,18 +46,18 @@ const LandingPage = () => {
                 </div>
 
                 <div className="relative z-10 w-full flex flex-col items-center">
-                    <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 mb-6 drop-shadow-sm">
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 mb-4 sm:mb-6 drop-shadow-sm">
                         Next-Generation <span className="text-indigo-600">Skin Analysis</span>
                     </h1>
-                    <p className="text-xl text-gray-600 max-w-2xl mb-10">
+                    <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mb-8 sm:mb-10 px-2">
                         Empowering your health with real-time, AI-driven dermatological insights directly in your browser. Fast, secure, and privacy-focused.
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-4 mb-20">
-                        <Link to="/scanner" className="bg-indigo-600 flex items-center gap-2 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-indigo-700 hover:shadow-lg transition">
+                    <div className="flex flex-col sm:flex-row gap-4 mb-16 sm:mb-20 w-full sm:w-auto px-4">
+                        <Link to="/scanner" className="w-full sm:w-auto bg-indigo-600 flex items-center justify-center gap-2 text-white px-8 py-4 rounded-xl text-base sm:text-lg font-semibold hover:bg-indigo-700 hover:shadow-lg transition">
                             <BrainCircuit /> Try the Scanner
                         </Link>
-                        <Link to="/about" className="bg-white text-indigo-600 border border-indigo-200 flex items-center gap-2 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-indigo-50 transition">
+                        <Link to="/about" className="w-full sm:w-auto bg-white text-indigo-600 border border-indigo-200 flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base sm:text-lg font-semibold hover:bg-indigo-50 transition">
                             <Info /> About Us
                         </Link>
                     </div>

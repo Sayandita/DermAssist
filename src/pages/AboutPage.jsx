@@ -70,21 +70,21 @@ const AboutPage = () => {
         <div className="min-h-screen bg-slate-50 text-slate-900 font-sans pb-20">
             {/* Header */}
             <header className="bg-white border-b border-slate-200 sticky top-0 z-10">
-                <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-                    <Link to="/" className="flex items-center gap-2 text-slate-600 hover:text-indigo-600 font-medium transition">
-                        <ArrowLeft size={18} /> Back to Home
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+                    <Link to="/" className="flex items-center gap-1 sm:gap-2 text-slate-600 hover:text-indigo-600 font-medium transition text-sm sm:text-base">
+                        <ArrowLeft size={18} /> <span className="hidden sm:inline">Back to Home</span>
                     </Link>
-                    <div className="flex items-center gap-3">
-                        <img src="/src/assets/logo.png" alt="DermAssist AI Logo" className="w-8 h-8 object-contain" />
-                        <span className="font-bold text-xl tracking-tight text-slate-800">DermAssist<span className="text-indigo-600">AI</span></span>
+                    <div className="flex items-center gap-2 sm:gap-3">
+                        <img src="/src/assets/logo.png" alt="DermAssist AI Logo" className="w-6 h-6 sm:w-8 sm:h-8 object-contain" />
+                        <span className="font-bold text-lg sm:text-xl tracking-tight text-slate-800">DermAssist<span className="text-indigo-600">AI</span></span>
                     </div>
-                    <div className="w-24"></div>
+                    <div className="w-8 sm:w-24"></div>
                 </div>
             </header>
 
-            <main className="max-w-5xl mx-auto px-6 py-12">
-                <div className="text-center mb-16">
-                    <h1 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">Meet the Team</h1>
+            <main className="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+                <div className="text-center mb-10 sm:mb-16">
+                    <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">Meet the Team</h1>
                     <p className="text-slate-500 text-lg max-w-2xl mx-auto">
                         We developed DermAssist AI to bridge the gap between cutting-edge artificial intelligence and accessible, private dermatological care.
                     </p>

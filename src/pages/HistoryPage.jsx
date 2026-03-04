@@ -74,13 +74,13 @@ const HistoryPage = () => {
     return (
         <div className="min-h-screen bg-gray-50 flex flex-col items-center">
             <header className="w-full bg-white shadow-sm p-4 flex justify-between items-center max-w-7xl">
-                <Link to="/dashboard" className="text-gray-600 hover:text-indigo-600 flex items-center gap-2 font-medium">
-                    <ArrowLeft className="w-5 h-5" /> Back to Dashboard
+                <Link to="/dashboard" className="text-gray-600 hover:text-indigo-600 flex items-center gap-1 sm:gap-2 font-medium text-sm sm:text-base">
+                    <ArrowLeft className="w-5 h-5" /> <span className="hidden sm:inline">Back</span>
                 </Link>
-                <span className="font-bold text-xl text-indigo-700 flex items-center gap-2">
-                    <HistoryIcon /> Scan History
+                <span className="font-bold text-lg sm:text-xl text-indigo-700 flex items-center gap-2">
+                    <HistoryIcon className="w-5 h-5 sm:w-6 sm:h-6" /> <span className="hidden sm:inline">History</span>
                 </span>
-                <div className="w-24"></div>
+                <div className="w-8 sm:w-24"></div>
             </header>
 
             <main className="flex-1 w-full max-w-6xl p-6 mt-8">

@@ -135,19 +135,19 @@ const ScannerPage = () => {
         <div className="min-h-screen bg-slate-50 text-slate-900 font-sans">
             {/* Header */}
             <header className="bg-white border-b border-slate-200 sticky top-0 z-10">
-                <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-                    <Link to="/dashboard" className="flex items-center gap-2 text-slate-600 hover:text-indigo-600 font-medium transition">
-                        <ArrowLeft size={18} /> Back
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+                    <Link to="/dashboard" className="flex items-center gap-1 sm:gap-2 text-slate-600 hover:text-indigo-600 font-medium transition text-sm sm:text-base">
+                        <ArrowLeft size={18} /> <span className="hidden sm:inline">Back</span>
                     </Link>
-                    <div className="flex items-center gap-3">
-                        <img src="/src/assets/logo.png" alt="DermAssist AI Logo" className="w-8 h-8 object-contain" />
-                        <span className="font-bold text-xl tracking-tight text-slate-800">DermAssist<span className="text-indigo-600">AI</span></span>
+                    <div className="flex items-center gap-2 sm:gap-3">
+                        <img src="/src/assets/logo.png" alt="DermAssist AI Logo" className="w-6 h-6 sm:w-8 sm:h-8 object-contain" />
+                        <span className="font-bold text-lg sm:text-xl tracking-tight text-slate-800">DermAssist<span className="text-indigo-600">AI</span></span>
                     </div>
-                    <div className="w-20"></div>
+                    <div className="w-8 sm:w-20"></div>
                 </div>
             </header>
 
-            <main className="max-w-4xl mx-auto px-6 py-12">
+            <main className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
                 <div className="text-center mb-10">
                     <h1 className="text-4xl font-extrabold text-slate-900 mb-3 tracking-tight">AI Skin Diagnostic</h1>
                     <p className="text-slate-500 text-lg max-w-xl mx-auto">Upload a clear photo of the skin lesion for a detailed dermatological analysis using our local EfficientNet-B0 engine.</p>
@@ -163,9 +163,9 @@ const ScannerPage = () => {
                     </div>
                 )}
 
-                <div className="grid md:grid-cols-2 gap-8 items-start">
+                <div className="grid md:grid-cols-2 gap-6 sm:gap-8 items-start">
                     {/* Left: Upload Section */}
-                    <div className="bg-white p-8 rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100">
+                    <div className="bg-white p-5 sm:p-8 rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100">
                         <div
                             className={`border-3 border-dashed rounded-2xl p-6 transition-all duration-300 flex flex-col items-center justify-center min-h-[350px] cursor-pointer 
                             ${!imageSrc ? 'border-slate-200 bg-slate-50 hover:bg-slate-100 hover:border-indigo-300' : 'border-indigo-100 bg-white'}`}
@@ -208,12 +208,12 @@ const ScannerPage = () => {
                     {/* Right: Results Section */}
                     <div className="space-y-6">
                         {isScanning ? (
-                            <div className="bg-white p-10 rounded-3xl shadow-xl border border-slate-100 flex flex-col items-center justify-center h-[520px]">
-                                <div className="relative flex items-center justify-center mb-8">
-                                    <div className="absolute">
+                            <div className="bg-white p-6 sm:p-10 rounded-3xl shadow-xl border border-slate-100 flex flex-col items-center justify-center min-h-[400px] md:h-[520px]">
+                                <div className="relative flex items-center justify-center w-40 h-40 mb-8">
+                                    <div className="absolute inset-0">
                                         <ProgressRing radius={80} stroke={8} progress={progress} />
                                     </div>
-                                    <span className="text-2xl font-black text-indigo-600">{Math.round(progress)}%</span>
+                                    <span className="text-2xl font-black text-indigo-600 relative z-10">{Math.round(progress)}%</span>
                                 </div>
                                 <h3 className="text-xl font-bold text-slate-800 mb-2">Analyzing Pixels...</h3>
                                 <p className="text-slate-400 text-center px-4">Local inference engine is scanning for morphological patterns.</p>
@@ -271,7 +271,7 @@ const ScannerPage = () => {
                                 </div>
                             </div>
                         ) : (
-                            <div className="bg-indigo-50/50 border border-indigo-100 p-10 rounded-3xl h-[520px] flex flex-col items-center justify-center text-center">
+                            <div className="bg-indigo-50/50 border border-indigo-100 p-6 sm:p-10 rounded-3xl min-h-[400px] md:h-[520px] flex flex-col items-center justify-center text-center">
                                 <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg shadow-indigo-100 mb-6">
                                     <ShieldCheck size={40} className="text-indigo-600" />
                                 </div>
