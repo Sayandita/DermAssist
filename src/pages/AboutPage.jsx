@@ -75,8 +75,13 @@ const AboutPage = () => {
                     <Link to="/" className="flex items-center gap-1 sm:gap-2 text-slate-600 hover:text-indigo-600 font-medium transition text-sm sm:text-base">
                         <ArrowLeft size={18} /> <span className="hidden sm:inline">Back to Home</span>
                     </Link>
+                    {/* 
+                      Increased navbar logo size by 1.2x 
+                      Original: w-6 h-6 sm:w-8 sm:h-8 
+                      New: w-[29px] h-[29px] sm:w-[38px] sm:h-[38px]
+                    */}
                     <div className="flex items-center gap-2 sm:gap-3">
-                        <img src={logoImg} alt="DermAssist AI Logo" className="w-6 h-6 sm:w-8 sm:h-8 object-contain" />
+                        <img src={logoImg} alt="DermAssist AI Logo" className="w-[29px] h-[29px] sm:w-[38px] sm:h-[38px] object-contain" />
                         <span className="font-bold text-lg sm:text-xl tracking-tight text-slate-800">DermAssist<span className="text-indigo-600">AI</span></span>
                     </div>
                     <div className="w-8 sm:w-24"></div>
@@ -84,14 +89,14 @@ const AboutPage = () => {
             </header>
 
             <main className="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
-                <div className="text-center mb-10 sm:mb-16">
+                {/* <div className="text-center mb-10 sm:mb-16">
                     <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">Meet the Team</h1>
                     <p className="text-slate-500 text-lg max-w-2xl mx-auto">
                         We developed DermAssist AI to bridge the gap between cutting-edge artificial intelligence and accessible, private dermatological care.
                     </p>
-                </div>
+                </div> */}
 
-                {/* Developers Grid */}
+                {/* Developers Grid
                 <div className="grid md:grid-cols-2 gap-8 mb-20">
                     {developers.map((dev, idx) => (
                         <div key={idx} className="bg-white p-8 rounded-3xl shadow-lg border border-slate-100 flex flex-col items-center text-center hover:shadow-xl transition-shadow">
@@ -108,7 +113,7 @@ const AboutPage = () => {
                             </div>
                         </div>
                     ))}
-                </div>
+                </div> */}
 
                 {/* Contact Form */}
                 <div className="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100">

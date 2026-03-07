@@ -111,8 +111,13 @@ const Dashboard = () => {
             {/* Navigation */}
             <nav className="bg-white shadow-sm border-b border-gray-200 p-4">
                 <div className="max-w-7xl mx-auto flex justify-between items-center px-0 sm:px-2 md:px-4">
+                    {/* 
+                      Increased navbar logo size by 1.2x 
+                      Original: w-6 h-6 sm:w-8 sm:h-8 
+                      New: w-[29px] h-[29px] sm:w-[38px] sm:h-[38px]
+                    */}
                     <Link to="/" className="flex items-center gap-2 sm:gap-3 text-indigo-700 font-bold text-lg sm:text-xl shrink-0">
-                        <img src={logoImg} alt="DermAssist AI Logo" className="w-6 h-6 sm:w-8 sm:h-8 object-contain" />
+                        <img src={logoImg} alt="DermAssist AI Logo" className="w-[29px] h-[29px] sm:w-[38px] sm:h-[38px] object-contain" />
                         <span className="hidden sm:inline">DermAssist AI</span>
                     </Link>
                     <div className="flex items-center gap-2 sm:gap-4 ml-4">

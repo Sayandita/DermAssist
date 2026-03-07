@@ -18,8 +18,13 @@ const LandingPage = () => {
     return (
         <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex flex-col">
             <nav className="w-full p-4 sm:p-6 flex justify-between items-center bg-white shadow-sm">
+                {/* 
+                  Increased navbar logo size by 1.2x 
+                  Original: w-8 h-8 sm:w-10 sm:h-10 
+                  New: w-[38px] h-[38px] sm:w-12 sm:h-12
+                */}
                 <div className="flex items-center gap-2 sm:gap-3 text-indigo-700 font-bold text-xl sm:text-2xl">
-                    <img src={logoImg} alt="DermAssist AI Logo" className="w-8 h-8 sm:w-10 sm:h-10 object-contain" />
+                    <img src={logoImg} alt="DermAssist AI Logo" className="w-[38px] h-[38px] sm:w-12 sm:h-12 object-contain" />
                     <span className="hidden sm:inline">DermAssist AI</span>
                 </div>
                 <div className="space-x-4">
@@ -59,7 +64,7 @@ const LandingPage = () => {
                             <BrainCircuit /> Try the Scanner
                         </Link>
                         <Link to="/about" className="w-full sm:w-auto bg-white text-indigo-600 border border-indigo-200 flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base sm:text-lg font-semibold hover:bg-indigo-50 transition">
-                            <Info /> About Us
+                            <Info /> Contact Us
                         </Link>
                     </div>
 

@@ -140,8 +140,13 @@ const ScannerPage = () => {
                     <Link to="/dashboard" className="flex items-center gap-1 sm:gap-2 text-slate-600 hover:text-indigo-600 font-medium transition text-sm sm:text-base">
                         <ArrowLeft size={18} /> <span className="hidden sm:inline">Back</span>
                     </Link>
+                    {/* 
+                      Increased navbar logo size by 1.2x 
+                      Original: w-6 h-6 sm:w-8 sm:h-8 
+                      New: w-[29px] h-[29px] sm:w-[38px] sm:h-[38px]
+                    */}
                     <div className="flex items-center gap-2 sm:gap-3">
-                        <img src={logoImg} alt="DermAssist AI Logo" className="w-6 h-6 sm:w-8 sm:h-8 object-contain" />
+                        <img src={logoImg} alt="DermAssist AI Logo" className="w-[29px] h-[29px] sm:w-[38px] sm:h-[38px] object-contain" />
                         <span className="font-bold text-lg sm:text-xl tracking-tight text-slate-800">DermAssist<span className="text-indigo-600">AI</span></span>
                     </div>
                     <div className="w-8 sm:w-20"></div>
