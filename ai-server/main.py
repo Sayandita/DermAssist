@@ -29,8 +29,9 @@ CLASS_MAP = {
     2: {"name": "Benign keratosis-like lesions", "id": "bkl", "insight": "Non-cancerous skin growth, often appearing in older age."},
     3: {"name": "Dermatofibroma", "id": "df", "insight": "A common benign fibrous nodule, often on the legs."},
     4: {"name": "Melanocytic nevi", "id": "nv", "insight": "Commonly known as moles. Most are benign but should be monitored for changes."},
-    5: {"name": "Vascular lesions", "id": "vasc", "insight": "Abnormalities of blood vessels in the skin, usually benign."},
-    6: {"name": "Melanoma", "id": "mel", "insight": "The most serious type of skin cancer. Requires immediate medical attention."}
+    5: {"name": "Melanoma", "id": "mel", "insight": "The most serious type of skin cancer. Requires immediate medical attention."},
+    6: {"name": "Vascular lesions", "id": "vasc", "insight": "Abnormalities of blood vessels in the skin, usually benign."}
+    
 }
 
 def load_model():
