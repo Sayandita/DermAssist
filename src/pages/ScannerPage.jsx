@@ -156,7 +156,7 @@ const ScannerPage = () => {
             <main className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
                 <div className="text-center mb-10">
                     <h1 className="text-4xl font-extrabold text-slate-900 mb-3 tracking-tight">AI Skin Diagnostic</h1>
-                    <p className="text-slate-500 text-lg max-w-xl mx-auto">Upload a clear photo of the skin lesion for a detailed dermatological analysis using our local EfficientNet-B0 engine.</p>
+                    <p className="text-slate-500 text-lg max-w-xl mx-auto">Upload a clear photo of the skin lesion for a detailed dermatological analysis using our powerful DenseNet-121 engine.</p>
                 </div>
 
                 {scanError && (
@@ -222,7 +222,7 @@ const ScannerPage = () => {
                                     <span className="text-2xl font-black text-indigo-600 relative z-10">{Math.round(progress)}%</span>
                                 </div>
                                 <h3 className="text-xl font-bold text-slate-800 mb-2">Analyzing Pixels...</h3>
-                                <p className="text-slate-400 text-center px-4">Local inference engine is scanning for morphological patterns.</p>
+                                <p className="text-slate-400 text-center px-4">Secure server engine is scanning for morphological patterns.</p>
                             </div>
                         ) : result ? (
                             <div className="bg-white overflow-hidden rounded-3xl shadow-xl border border-indigo-50 animate-in zoom-in-95 duration-500">
@@ -231,7 +231,7 @@ const ScannerPage = () => {
                                         <CheckCircle size={20} />
                                         <span className="font-semibold tracking-wide uppercase text-xs">Diagnostic Result</span>
                                     </div>
-                                    <span className="text-xs bg-white/20 px-2 py-1 rounded-full backdrop-blur-sm">Verified Local Engine</span>
+                                    <span className="text-xs bg-white/20 px-2 py-1 rounded-full backdrop-blur-sm">Verified Cloud Engine</span>
                                 </div>
 
                                 <div className="p-8">
