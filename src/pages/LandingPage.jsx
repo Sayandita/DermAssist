@@ -56,7 +56,7 @@ const LandingPage = () => {
                         Next-Generation <span className="text-indigo-600">Skin Analysis</span>
                     </h1>
                     <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mb-8 sm:mb-10 px-2">
-                        Empowering your health with fast, AI-driven dermatological insights. Secure, and privacy-focused.
+                        Empowering your health with real-time, AI-driven dermatological insights directly in your browser. Fast, secure, and privacy-focused.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 mb-16 sm:mb-20 w-full sm:w-auto px-4">
@@ -74,7 +74,7 @@ const LandingPage = () => {
                                 <BrainCircuit className="w-6 h-6" />
                             </div>
                             <h3 className="text-xl font-bold mb-2">Instant AI Inference</h3>
-                            <p className="text-gray-600">Powered by a server-side DenseNet-121 model, our AI processes images on our secure backend for high accuracy.</p>
+                            <p className="text-gray-600">Powered by MobileNetV2, our client-side AI processes images entirely in your browser without compromising speed.</p>
                         </div>
 
                         <div className="bg-white p-6 rounded-2xl shadow-xl shadow-indigo-100 border border-gray-100">
@@ -82,7 +82,7 @@ const LandingPage = () => {
                                 <ShieldCheck className="w-6 h-6" />
                             </div>
                             <h3 className="text-xl font-bold mb-2">Privacy First</h3>
-                            <p className="text-gray-600">Images are securely analyzed by our advanced backend. We only store your scan results if you choose to save them securely.</p>
+                            <p className="text-gray-600">Images are analyzed directly on your device. We only store your scan results if you choose to save them securely.</p>
                         </div>
 
                         <div className="bg-white p-6 rounded-2xl shadow-xl shadow-indigo-100 border border-gray-100">
